@@ -1,12 +1,23 @@
+<script>
+    export default {
+        name: 'City',
+        props: {
+            weatherInfo: {
+                type: Object
+            },
+        }
+    }
+</script>
+
 <template>
     <div class="w-4/5 mx-auto rounded-3xl bg-gray-200 p-4 m-6 text-center shadow text-3xl">
-        <h1>Weather in Yakutsk</h1>
+        <h1>Weather in {{ weatherInfo.name }}</h1>
     </div>
     <div class="w-[96%] mx-auto rounded-3xl p-4 mt-6 flex gap-5">
         <div class="w-2/5 rounded-3xl bg-gray-200 p-4">
-            <h2 class="text-2xl text-center">Yesterday</h2>
+            <h2 class="text-2xl text-center">Yesterday </h2>
             <div class="hr"></div>
-            <p class="text-center mt-8 text-3xl">-15 C</p>
+            <p class="text-center mt-8 text-3xl"> {{ weatherInfo.main.temp }}</p>
             <div class="mt-8 text-xl">
                 <p class="flex"><img src="" alt="clouds"><span>Cloudy</span></p>
                 <p class="flex"><img src="" alt="wind"><span>North-East</span></p>
@@ -16,17 +27,18 @@
         <div class="w-2/5 rounded-3xl bg-gray-200 p-4">
             <h2 class="text-2xl text-center">Today</h2>
             <div class="hr"></div>
-            <p class="text-center mt-8 text-3xl">-15 C</p>
+            <p class="text-center mt-8 text-3xl">{{ weatherInfo.main.temp }}</p>
             <div class="mt-8 text-xl">
-                <p class="flex"><img src="" alt="clouds"><span>Cloudy</span></p>
+                <p class="flex"><img src="" alt="clouds"><span>{{ weatherInfo.weather.description }}</span></p>
                 <p class="flex"><img src="" alt="wind"><span>North-East</span></p>
+                <p class="flex"><img src="" alt="wind"><span>{{ weatherInfo.wind.speed }} m/s</span></p>
                 <span>Saturday</span>
             </div>
         </div>
         <div class="w-2/5 rounded-3xl bg-gray-200 p-4">
             <h2 class="text-2xl text-center">Tomorrow</h2>
             <div class="hr"></div>
-            <p class="text-center mt-8 text-3xl">-15 C</p>
+            <p class="text-center mt-8 text-3xl">{{ weatherInfo.main.temp }}</p>
             <div class="mt-8 text-xl">
                 <p class="flex"><img src="" alt="clouds"><span>Cloudy</span></p>
                 <p class="flex"><img src="" alt="wind"><span>North-East</span></p>

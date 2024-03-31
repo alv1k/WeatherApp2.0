@@ -1,3 +1,14 @@
+<script>
+    export default {
+        name: 'City',
+        props: {
+            weatherInfo: {
+                type: Object
+            },
+        }
+    }
+</script>
+
 <template>
     <div class="w-4/5 bg-gray-200 mx-auto text-center p-3 text-3xl rounded-3xl shadow mt-8">
         <h1>Probabilities Of Weather</h1>
