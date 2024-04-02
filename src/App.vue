@@ -7,6 +7,7 @@ import ExtraInfo from './components/ExtraInfo.vue';
 
 const city = ref('Yakutsk')
 const weatherInfo = ref(null)
+//console.log("123");
 
 function getWeather() {
   fetch(`${BASE_URL}?q=${city.value}&appid=${API_KEY}&units=metric`)
